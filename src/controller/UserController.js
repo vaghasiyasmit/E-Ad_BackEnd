@@ -15,7 +15,8 @@ const signUp = async (req, res) => {
     const addedUser = await userModel.create(req.body);
     await mailUtil.sendMail(
       addedUser.email,
-      "Welcome To eAdvertisement",
+      "Welcome To eAdvertisement"
+      ,"You are Successfully Registered with E-Advertisement",
     );
     res.status(201).json({
       message: "New User Has Been Added",
